@@ -78,6 +78,7 @@ nav ul li a:hover {
 .hero::before {
     content: "";
     position: absolute;
+    font-size: 1em;
     top: 0;
     left: 0;
     width: 100%;
