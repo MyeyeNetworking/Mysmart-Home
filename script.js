@@ -61,3 +61,31 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Existing JS code...
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const navLinks = document.querySelectorAll('#nav-links a');
+    const sections = document.querySelectorAll('.page-section');
+
+    // Function to hide all sections and show the selected one
+    function showPage(pageId) {
+        sections.forEach(section => {
+            if (section.id === pageId) {
+                section.classList.add('active');
+            } else {
+                section.classList.remove('active');
+            }
+        });
+    }
+
+    // Event listeners for navigation links
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const pageId = link.getAttribute('data-page');
+            showPage(pageId);
+        });
+    });
+
+    // Show the home page by default
+    showPage('home');
+});
