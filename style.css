@@ -267,7 +267,7 @@ footer {
 }
 
 .logo-image {
-    height: 40px; /* Adjust as needed */
+    height: 20px; /* Adjust as needed */
     margin-right: 10px;
     /* Adjust margin if needed for spacing between the logo and text */
 }
@@ -277,6 +277,6 @@ footer {
     align-items: center;
     color: white;
     text-decoration: none;
-    font-size: 1.5em;
+    font-size: 1.1em;
     font-weight: bold;
 }
