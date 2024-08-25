@@ -1,92 +1,62 @@
+document.addEventListener('DOMContentLoaded', function() {
+    // Splash Screen
+    const splashScreen = document.getElementById('splash-screen');
+    setTimeout(() => {
+        splashScreen.style.display = 'none';
+    }, 3000); // Hide splash screen after 3 seconds
 
-document.addEventListener('DOMContentLoaded', () => {
-    // Slideshow functionality
-    const slides = document.querySelectorAll('.slide');
-    let currentSlide = 0;
-
-    function showSlide(index) {
-        slides.forEach((slide, i) => {
-            slide.style.display = i === index ? 'block' : 'none';
-        });
-    }
-
-    function nextSlide() {
-        currentSlide = (currentSlide + 1) % slides.length;
-        showSlide(currentSlide);
-    }
-
-    function prevSlide() {
-        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-        showSlide(currentSlide);
-    }
-
-    document.querySelector('.next').addEventListener('click', nextSlide);
-    document.querySelector('.prev').addEventListener('click', prevSlide);
-
-    showSlide(currentSlide);
-    setInterval(nextSlide, 3000); // Change slide every 3 seconds
-
-    // Scroll animation for hero section
-    document.addEventListener('scroll', () => {
-        const hero = document.querySelector('.hero');
-        const heroTop = hero.getBoundingClientRect().top;
-
-        if (heroTop < window.innerHeight) {
-            hero.classList.add('in-view');
-        } else {
-            hero.classList.remove('in-view');
-        }
-    });
-
-    // Mobile menu toggle
+    // Mobile Menu Toggle
     const menuToggle = document.getElementById('menu-toggle');
     const navLinks = document.getElementById('nav-links');
-
-    menuToggle.addEventListener('click', () => {
+    
+    menuToggle.addEventListener('click', function() {
         navLinks.classList.toggle('active');
     });
-});
 
-
-document.addEventListener('DOMContentLoaded', () => {
-    // Hide splash screen after 3 seconds
-    setTimeout(() => {
-        const splashScreen = document.getElementById('splash-screen');
-        splashScreen.style.opacity = '0';
-        splashScreen.style.transition = 'opacity 0.5s ease';
-        setTimeout(() => {
-            splashScreen.style.display = 'none';
-        }, 500);
-    }, 3000);
-    
-    // Existing JS code...
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-    const navLinks = document.querySelectorAll('#nav-links a');
-    const sections = document.querySelectorAll('.page-section');
-
-    // Function to hide all sections and show the selected one
-    function showPage(pageId) {
-        sections.forEach(section => {
-            if (section.id === pageId) {
-                section.classList.add('active');
-            } else {
-                section.classList.remove('active');
-            }
+    // Slideshow Functionality
+    let slideIndex = 0;
+    const slides = document.querySelectorAll('.slide');
+    const showSlides = () => {
+        slides.forEach((slide, index) => {
+            slide.style.display = (index === slideIndex) ? 'block' : 'none';
         });
-    }
+        slideIndex = (slideIndex + 1) % slides.length;
+    };
 
-    // Event listeners for navigation links
-    navLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            const pageId = link.getAttribute('data-page');
-            showPage(pageId);
-        });
+    document.querySelector('.next').addEventListener('click', () => {
+        slideIndex = (slideIndex + 1) % slides.length;
+        showSlides();
     });
 
-    // Show the home page by default
-        showPage('home');
+    document.querySelector('.prev').addEventListener('click', () => {
+        slideIndex = (slideIndex - 1 + slides.length) % slides.length;
+        showSlides();
+    });
+
+    showSlides(); // Initial call to show slides
+
+    // Floating Chat Button
+    const chatButton = document.getElementById('chat-button');
+    chatButton.addEventListener('mousedown', function(event) {
+        let offsetX = event.clientX - chatButton.getBoundingClientRect().left;
+        let offsetY = event.clientY - chatButton.getBoundingClientRect().top;
+
+        const moveAt = (pageX, pageY) => {
+            chatButton.style.left = `${pageX - offsetX}px`;
+            chatButton.style.top = `${pageY - offsetY}px`;
+        };
+
+        moveAt(event.pageX, event.pageY);
+
+        const onMouseMove = (event) => {
+            moveAt(event.pageX, event.pageY);
+        };
+
+        document.addEventListener('mousemove', onMouseMove);
+
+        chatButton.addEventListener('mouseup', () => {
+            document.removeEventListener('mousemove', onMouseMove);
+            chatButton.onmouseup = null;
+        });
+    });
 });
- 
