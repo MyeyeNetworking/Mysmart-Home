@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', () => {
     // Slideshow functionality
     const slides = document.querySelectorAll('.slide');
