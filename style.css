@@ -75,10 +75,19 @@ nav ul li a:hover {
     opacity: 1;
 }
 
+
+.hero h1 {
+    font-size: 3em;
+    margin: 0;
+}
+
+.hero p {
+    font-size: 1.5em;
+}
+
 .hero::before {
     content: "";
     position: absolute;
-    font-size: 1em;
     top: 0;
     left: 0;
     width: 100%;
