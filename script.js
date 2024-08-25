@@ -1,16 +1,13 @@
 document.addEventListener("DOMContentLoaded", function() {
 
     // Show splash screen for 3 seconds
-
     setTimeout(function() {
-
-        document.getElementById('splash-screen').style.display = 'none';
-
-        document.getElementById('products-section').style.display = 'block';
-
+        document.getElementById('splash-screen').style.display = 'none'; // Hide splash screen
+        document.querySelector('main').style.display = 'block'; // Show main content
     }, 3000); // 3000ms = 3 seconds
 
 });
+
 
 document.addEventListener('DOMContentLoaded', () => {
     // Slideshow functionality
