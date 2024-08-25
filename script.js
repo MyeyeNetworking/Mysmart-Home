@@ -87,4 +87,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Show the home page by default
+        showPage('home');
+});
  
