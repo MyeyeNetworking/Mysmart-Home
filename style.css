@@ -322,3 +322,37 @@ footer {
     margin: 0;
 }
 
+.products {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #fff;
+}
+
+.products h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.product-item {
+    display: inline-block;
+    margin: 20px;
+    width: 30%;
+    text-align: left;
+}
+
+.product-item img {
+    width: 100%;
+    height: auto;
+}
+
+.product-item h3 {
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+
+.product-item p {
+    font-size: 1em;
+    color: #666;
+}
+
+
