@@ -93,6 +93,11 @@ nav ul li a:hover {
     z-index: 2;
 }
 
+
+#cta-button:hover {
+    background-color: #e55d00;
+}
+
 .features {
     padding: 40px 20px;
     text-align: center;
