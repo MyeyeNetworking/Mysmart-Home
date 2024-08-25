@@ -316,12 +316,4 @@ footer {
     /* Adjust margin if needed for spacing between the logo and text */
 }
 
-.logo a {
-    display: flex;
-    align-items: center;
-    color: white;
-    text-decoration: none;
-    font-size: 1.1em;
-    font-weight: bold;
-}
 
