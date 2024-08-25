@@ -283,31 +283,4 @@ footer {
 }
 
 
-/* Floating Chat Button */
-.chat-button {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 50px; /* Adjust size as needed */
-    height: 50px; /* Adjust size as needed */
-    background-color: #333; /* Background color for the button */
-    border-radius: 50%; /* Circular button */
-    display: none; /* Hide initially */
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    text-decoration: none;
-    cursor: grab; /* Cursor change to indicate draggable */
-    z-index: 9999; /* Increased z-index to stay on top of all elements */
-}
-
-.chat-button img {
-    width: 30px; /* Adjust icon size as needed */
-    height: auto;
-}
-
-.chat-button:hover {
-    background-color: #555; /* Darker color on hover */
-}
-
 
