@@ -47,30 +47,3 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-// Draggable chat button functionality
-document.addEventListener('DOMContentLoaded', () => {
-    const chatButton = document.getElementById('chat-button');
-    
-    chatButton.addEventListener('mousedown', (e) => {
-        let shiftX = e.clientX - chatButton.getBoundingClientRect().left;
-        let shiftY = e.clientY - chatButton.getBoundingClientRect().top;
-
-        function moveAt(pageX, pageY) {
-            chatButton.style.left = pageX - shiftX + 'px';
-            chatButton.style.top = pageY - shiftY + 'px';
-        }
-
-        function onMouseMove(event) {
-            moveAt(event.pageX, event.pageY);
-        }
-
-        document.addEventListener('mousemove', onMouseMove);
-
-        chatButton.addEventListener('mouseup', () => {
-            document.removeEventListener('mousemove', onMouseMove);
-            chatButton.onmouseup = null;
-        });
-    });
-
-    chatButton.ondragstart = () => false;
-});
