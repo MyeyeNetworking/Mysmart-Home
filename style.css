@@ -282,23 +282,3 @@ footer {
 }
 
 
-/* Styles for the floating chat button */
-#chat-button {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 1000;
-    cursor: pointer;
-}
-
-.chat-icon {
-    width: 60px; /* Adjust size as needed */
-    height: 60px;
-    border-radius: 50%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: box-shadow 0.3s ease;
-}
-
-#chat-button:hover .chat-icon {
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
-}
