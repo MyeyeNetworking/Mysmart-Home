@@ -1,6 +1,3 @@
-
-
-
 document.addEventListener('DOMContentLoaded', () => {
     // Slideshow functionality
     const slides = document.querySelectorAll('.slide');
@@ -47,19 +44,4 @@ document.addEventListener('DOMContentLoaded', () => {
     menuToggle.addEventListener('click', () => {
         navLinks.classList.toggle('active');
     });
-});
-
-
-document.addEventListener('DOMContentLoaded', () => {
-    // Hide splash screen after 3 seconds
-    setTimeout(() => {
-        const splashScreen = document.getElementById('splash-screen');
-        splashScreen.style.opacity = '0';
-        splashScreen.style.transition = 'opacity 0.5s ease';
-        setTimeout(() => {
-            splashScreen.style.display = 'none';
-        }, 500);
-    }, 3000);
-    
-    // Existing JS code...
 });
