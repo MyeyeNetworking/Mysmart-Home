@@ -1,22 +1,43 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>CodePen - Untitled</title>
+  <title>Myeye Smart Home</title>
   <link rel="stylesheet" href="./style.css">
-
 </head>
 <body>
 
-      <div id="splash-screen">
+    <div id="splash-screen">
         <div class="splash-content">
             <img src="IMG/MOTION.png" alt="Myeye Logo" class="splash-logo">
             <h1>WELCOME</h1>
         </div>
     </div>
-    
-  
-<!-- partial:index.partial.html -->
+
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="#">
+                    <img src="IMG/MOTION.png" alt="Myeye Logo" class="logo-image">
+                </a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+            <ul id="nav-links">
+                <li><a href="#" data-page="home">Home</a></li>
+                <li><a href="#" data-page="products">Products</a></li>
+                <li><a href="#" data-page="features">Features</a></li>
+                <li><a href="#" data-page="about">About Us</a></li>
+                <li><a href="#" data-page="contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="page-section active">
+            
+              
+              
+             <!-- partial:index.partial.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -87,10 +108,37 @@
                 <button class="next">&#10095;</button>
             </div>
         </section>
+    </main> 
+              
+              
+              
+            </div>
+        </section>
+
+        <section id="products" class="page-section">
+            <h2>Our Products</h2>
+            <!-- Add your products content here -->
+        </section>
+
+        <section id="features" class="page-section">
+            <h2>Our Features</h2>
+            <!-- Add your features content here -->
+        </section>
+
+        <section id="about" class="page-section">
+            <h2>About Us</h2>
+            <!-- Add your about content here -->
+        </section>
+
+        <section id="contact" class="page-section">
+            <h2>Contact Us</h2>
+            <!-- Add your contact content here -->
+        </section>
     </main>
+
     <footer>
         <div class="footer-content">
-            <p>&copy; 2024 MySmart Home. All rights reserved.</p>
+            <p>&copy; 2024 Myeye Smart Home. All rights reserved.</p>
             <ul>
                 <li><a href="#">Privacy Policy</a></li>
                 <li><a href="#">Terms of Service</a></li>
@@ -102,12 +150,7 @@
             </div>
         </div>
     </footer>
-  
-    <script src="scripts.js"></script>
-</body>
-</html>
-<!-- partial -->
-  <script  src="./script.js"></script>
 
+    <script src="./script.js"></script>
 </body>
 </html>
