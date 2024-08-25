@@ -303,3 +303,25 @@ footer {
     font-size: 2.5em;
     margin: 0;
 }
+
+/* Logo Styling */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-image {
+    height: 50px; /* Adjust as needed */
+    margin-right: 10px;
+    /* Adjust margin if needed for spacing between the logo and text */
+}
+
+.logo a {
+    display: flex;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
