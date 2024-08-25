@@ -47,3 +47,24 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+document.addEventListener("DOMContentLoaded", function() {
+    // Show chat button after 10 seconds
+    setTimeout(function() {
+        document.querySelector('.chat-button').style.display = 'flex';
+    }, 10000); // 10000ms = 10 seconds
+
+    // Make the chat button draggable
+    dragElement(document.querySelector('.chat-button'));
+
+    function dragElement(el) {
+        var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+        if (el) {
+            // If present, the header is where you move the DIV from:
+            el.onmousedown = dragMouseDown;
+        } else {
+            // Otherwise, move the DIV from anywhere inside the DIV:
+            el.ontouchstart = dragTouchStart;
+        }
+
+
+
