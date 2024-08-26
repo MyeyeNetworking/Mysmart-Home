@@ -539,18 +539,21 @@ nav ul li a:hover {
 }
 
 .gradient-bar {
+  
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 75%; /* 3/4 the height of the image */
+    height: 25%; /* Set the height to a quarter of the slideshow */
     background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
     color: white;
+    text-align: center;
     display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-    padding: 10px;
-    box-sizing: border-box;
+    align-items: center; /* Vertically center the text */
+    justify-content: center; /* Horizontally center the text */
+}
+
+.active {
+    display: block;
 }
 
 .gradient-bar p {
