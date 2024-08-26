@@ -542,7 +542,7 @@ nav ul li a:hover {
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 75%; /* 3/4 the height of the image */
+    height: 25%; /* 3/4 the height of the image */
     background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
     color: white;
     display: flex;
