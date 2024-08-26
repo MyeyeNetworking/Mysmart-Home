@@ -553,9 +553,6 @@ nav ul li a:hover {
     box-sizing: border-box;
 }
 
-.active {
-    display: block;
-}
 
 .gradient-bar p {
     margin: 0;
