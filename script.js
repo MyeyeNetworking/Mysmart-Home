@@ -91,13 +91,11 @@ document.addEventListener('DOMContentLoaded', () => {
  
 
 
-document.getElementById('Chat with Technician').addEventListener('click', function(event) {
-    event.preventDefault(); // Prevent the default link behavior
-
-    // Simulate clicking the chat widget to open it
-    const chatWidget = document.querySelector('call-us-selector');
-    if (chatWidget) {
-        chatWidget.click(); // This assumes the widget opens on click
+document.getElementById('Chat with Technician').addEventListener('click', function() {
+    // Check if the chat widget is available
+    if (window.CallUs && window.CallUs.openChat) {
+        window.CallUs.openChat(); // This function should open the chat widget
+    } else {
+        console.log('Chat widget is not available.');
     }
 });
-
