@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
  
 
 
-document.getElementById('your-link2.html').addEventListener('click', function(event) {
+document.getElementById('Chat with Technician').addEventListener('click', function(event) {
     event.preventDefault(); // Prevent the default link behavior
 
     // Simulate clicking the chat widget to open it
