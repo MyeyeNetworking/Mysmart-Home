@@ -70,7 +70,7 @@ nav ul li a:hover {
     padding: 100px 20px;
     margin-top: 60px; /* Adjusted for fixed header */
     opacity: 0;
-    
+    transition: opacity 1s ease-in;
 }
 
 .hero.in-view {
