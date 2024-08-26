@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
             slide.style.display = i === index ? 'block' : 'none';
         });
     }
-
     function nextSlide() {
         currentSlide = (currentSlide + 1) % slides.length;
         showSlide(currentSlide);
