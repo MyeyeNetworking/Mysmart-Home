@@ -25,17 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
     showSlide(currentSlide);
     setInterval(nextSlide, 3000); // Change slide every 3 seconds
 
-    // Scroll animation for hero section
-    document.addEventListener('scroll', () => {
-        const hero = document.querySelector('.hero');
-        const heroTop = hero.getBoundingClientRect().top;
-
-        if (heroTop < window.innerHeight) {
-            hero.classList.add('in-view');
-        } else {
-            hero.classList.remove('in-view');
-        }
-    });
+    
 
     // Mobile menu toggle
     const menuToggle = document.getElementById('menu-toggle');
