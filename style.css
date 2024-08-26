@@ -69,8 +69,8 @@ nav ul li a:hover {
     text-align: center;
     padding: 100px 20px;
     margin-top: 60px; /* Adjusted for fixed header */
-    opacity: 0;
-    transition: opacity 1s ease-in;
+    opacity: 100;
+    
 }
 
 .hero.in-view {
