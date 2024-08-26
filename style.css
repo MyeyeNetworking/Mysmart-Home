@@ -552,10 +552,6 @@ nav ul li a:hover {
     justify-content: center; /* Horizontally center the text */
 }
 
-.active {
-    display: block;
-}
-
 .gradient-bar p {
     margin: 0;
     text-align: center;
