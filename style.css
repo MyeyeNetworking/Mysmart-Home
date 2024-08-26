@@ -69,7 +69,7 @@ nav ul li a:hover {
     text-align: center;
     padding: 100px 20px;
     margin-top: 60px; /* Adjusted for fixed header */
-    opacity: 100;
+    opacity: 0;
     
 }
 
