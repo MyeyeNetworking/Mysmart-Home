@@ -90,3 +90,14 @@ document.addEventListener('DOMContentLoaded', () => {
 });
  
 
+
+document.getElementById('open-chat-link').addEventListener('click', function(event) {
+    event.preventDefault(); // Prevent the default link behavior
+
+    // Simulate clicking the chat widget to open it
+    const chatWidget = document.querySelector('call-us-selector');
+    if (chatWidget) {
+        chatWidget.click(); // This assumes the widget opens on click
+    }
+});
+
