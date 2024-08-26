@@ -19,6 +19,18 @@ document.addEventListener('DOMContentLoaded', () => {
         showSlide(currentSlide);
     }
 
+     // Scroll animation for hero section
+    document.addEventListener('scroll', () => {
+        const hero = document.querySelector('.hero');
+        const heroTop = hero.getBoundingClientRect().top;
+
+        if (heroTop < window.innerHeight) {
+            hero.classList.add('in-view');
+        } else {
+            hero.classList.remove('in-view');
+        }
+    });
+
     document.querySelector('.next').addEventListener('click', nextSlide);
     document.querySelector('.prev').addEventListener('click', prevSlide);
 
