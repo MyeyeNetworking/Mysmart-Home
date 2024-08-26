@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
  
 
 
-document.getElementById('Chat with Technician').addEventListener('click', function() {
+document.getElementById('open-chat-btn').addEventListener('click', function() {
     // Check if the chat widget is available
     if (window.CallUs && window.CallUs.openChat) {
         window.CallUs.openChat(); // This function should open the chat widget
