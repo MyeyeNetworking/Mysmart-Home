@@ -579,8 +579,6 @@ nav ul li a:hover {
     width: 100%;
 }
 
-
-
 /* Hamburger Menu */
 #menu-toggle {
     display: none;
@@ -636,5 +634,4 @@ nav ul li a:hover {
         display: block;
         text-align: center;
     }
-}
 
