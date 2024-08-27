@@ -79,3 +79,15 @@ document.addEventListener('DOMContentLoaded', () => {
     // Show the home page by default
     showPage('home');
 });
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+
+    menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+});
+
