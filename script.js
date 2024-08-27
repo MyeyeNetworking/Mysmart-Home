@@ -20,17 +20,27 @@ document.addEventListener('DOMContentLoaded', () => {
         showSlide(currentSlide);
     }
 
-     // Scroll animation for hero section
-    document.addEventListener('scroll', () => {
-        const hero = document.querySelector('.hero');
-        const heroTop = hero.getBoundingClientRect().top;
+    
+   // Function to hide the splash screen and show the hero section
+function initPage() {
+    const splashScreen = document.getElementById('splash-screen');
+    const heroSection = document.querySelector('.hero');
 
-        if (heroTop < window.innerHeight) {
-            hero.classList.add('in-view');
-        } else {
-            hero.classList.remove('in-view');
-        }
-    });
+    // Hide the splash screen after 3 seconds
+    setTimeout(() => {
+        splashScreen.style.opacity = 0;
+        splashScreen.style.visibility = 'hidden'; // Hide it completely
+
+        // Fade in the hero section after splash screen is hidden
+        setTimeout(() => {
+            heroSection.style.opacity = 1;
+        }, 300); // Adjust the delay if needed
+    }, 3000); // Splash screen duration
+}
+
+// Initialize the page
+window.addEventListener('load', initPage);
+
 
     document.querySelector('.next').addEventListener('click', nextSlide);
     document.querySelector('.prev').addEventListener('click', prevSlide);
