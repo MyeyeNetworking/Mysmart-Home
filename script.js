@@ -1,21 +1,13 @@
-
-document.addEventListener('DOMContentLoaded', () => {
+ocument.addEventListener('DOMContentLoaded', () => {
+    // Slideshow functionality
     const slides = document.querySelectorAll('.slide');
     let currentSlide = 0;
 
     function showSlide(index) {
         slides.forEach((slide, i) => {
-            if (i === index) {
-                slide.classList.add('active');
-                slide.classList.remove('previous');
-            } else if (i === (index - 1 + slides.length) % slides.length) {
-                slide.classList.add('previous');
-                slide.classList.remove('active');
-            } else {
-                slide.classList.remove('active', 'previous');
-            }
+            slide.style.display = i === index ? 'block' : 'none';
         });
-
+    }
     function nextSlide() {
         currentSlide = (currentSlide + 1) % slides.length;
         showSlide(currentSlide);
@@ -31,7 +23,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     showSlide(currentSlide);
     setInterval(nextSlide, 3000); // Change slide every 3 seconds
-});
 
 
      // Scroll animation for hero section
