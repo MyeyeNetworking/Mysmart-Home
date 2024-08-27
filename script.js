@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
             slide.style.display = i === index ? 'block' : 'none';
         });
     }
+    
     function nextSlide() {
         currentSlide = (currentSlide + 1) % slides.length;
         showSlide(currentSlide);
@@ -18,35 +19,31 @@ document.addEventListener('DOMContentLoaded', () => {
         showSlide(currentSlide);
     }
 
-    
-   // Function to hide the splash screen and show the hero section
-function initPage() {
-    const splashScreen = document.getElementById('splash-screen');
-    const heroSection = document.querySelector('.hero');
+    // Function to hide the splash screen and show the hero section
+    function initPage() {
+        const splashScreen = document.getElementById('splash-screen');
+        const heroSection = document.querySelector('.hero');
 
-    // Hide the splash screen after 3 seconds
-    setTimeout(() => {
-        splashScreen.style.opacity = 0;
-        splashScreen.style.visibility = 'hidden'; // Hide it completely
-
-        // Fade in the hero section after splash screen is hidden
+        // Fade out the splash screen and then show the hero section
         setTimeout(() => {
-            heroSection.style.opacity = 1;
-        }, 300); // Adjust the delay if needed
-    }, 3000); // Splash screen duration
-}
+            splashScreen.style.opacity = 0;
+            splashScreen.style.visibility = 'hidden'; // Hide it completely
 
-// Initialize the page
-window.addEventListener('load', initPage);
+            // Fade in the hero section after splash screen is hidden
+            setTimeout(() => {
+                heroSection.style.opacity = 1;
+            }, 300); // Adjust the delay if needed
+        }, 3000); // Splash screen duration
+    }
 
+    // Initialize the page
+    window.addEventListener('load', initPage);
 
     document.querySelector('.next').addEventListener('click', nextSlide);
     document.querySelector('.prev').addEventListener('click', prevSlide);
 
     showSlide(currentSlide);
     setInterval(nextSlide, 3000); // Change slide every 3 seconds
-
-    
 
     // Mobile menu toggle
     const menuToggle = document.getElementById('menu-toggle');
@@ -55,25 +52,8 @@ window.addEventListener('load', initPage);
     menuToggle.addEventListener('click', () => {
         navLinks.classList.toggle('active');
     });
-});
 
-
-document.addEventListener('DOMContentLoaded', () => {
-    // Hide splash screen after 3 seconds
-    setTimeout(() => {
-        const splashScreen = document.getElementById('splash-screen');
-        splashScreen.style.opacity = '0';
-        splashScreen.style.transition = 'opacity 0.5s ease';
-        setTimeout(() => {
-            splashScreen.style.display = 'none';
-        }, 500);
-    }, 3000);
-    
-    // Existing JS code...
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-    const navLinks = document.querySelectorAll('#nav-links a');
+    const navLinksItems = document.querySelectorAll('#nav-links a');
     const sections = document.querySelectorAll('.page-section');
 
     // Function to hide all sections and show the selected one
@@ -88,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Event listeners for navigation links
-    navLinks.forEach(link => {
+    navLinksItems.forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
             const pageId = link.getAttribute('data-page');
@@ -97,6 +77,5 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Show the home page by default
-        showPage('home');
+    showPage('home');
 });
-
