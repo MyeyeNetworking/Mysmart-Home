@@ -1,4 +1,6 @@
-ocument.addEventListener('DOMContentLoaded', () => {
+
+
+document.addEventListener('DOMContentLoaded', () => {
     // Slideshow functionality
     const slides = document.querySelectorAll('.slide');
     let currentSlide = 0;
@@ -17,13 +19,6 @@ ocument.addEventListener('DOMContentLoaded', () => {
         currentSlide = (currentSlide - 1 + slides.length) % slides.length;
         showSlide(currentSlide);
     }
-
-    document.querySelector('.next').addEventListener('click', nextSlide);
-    document.querySelector('.prev').addEventListener('click', prevSlide);
-
-    showSlide(currentSlide);
-    setInterval(nextSlide, 3000); // Change slide every 3 seconds
-
 
      // Scroll animation for hero section
     document.addEventListener('scroll', () => {
@@ -97,6 +92,3 @@ document.addEventListener('DOMContentLoaded', () => {
         showPage('home');
 });
  
-
-
-
