@@ -101,4 +101,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // Show the home page by default
         showPage('home');
 });
+
+
+// Toggle navigation menu on smaller screens
+document.querySelector('.menu-toggle').addEventListener('click', () => {
+    document.querySelector('nav ul').classList.toggle('active');
+});
+
  
