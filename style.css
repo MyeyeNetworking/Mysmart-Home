@@ -227,7 +227,7 @@ footer {
 /* Splash Screen Styling */
 #splash-screen {
     background-color: #333; /* Replace with your desired color */
-    color: #fff; /* Ensures text is visible against the background */
+    color: #f4f4f4; /* Ensures text is visible against the background */
     display: flex;
     justify-content: center;
     align-items: center;
