@@ -15,7 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 slide.classList.remove('active', 'previous');
             }
         });
-    }
 
     function nextSlide() {
         currentSlide = (currentSlide + 1) % slides.length;
