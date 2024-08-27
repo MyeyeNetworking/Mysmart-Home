@@ -249,7 +249,7 @@ footer {
 
 .hero {
     opacity: 0;
-    transition: opacity 1s ease-in-out; /* Fade in effect */
+    transition: opacity 3s ease-in-out; /* Fade in effect */
 }
 
 /* Add other responsive design rules as needed */
