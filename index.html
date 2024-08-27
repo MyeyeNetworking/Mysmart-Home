@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Myeye Smart Home</title>
-    <link rel="stylesheet" href="./style.css">
+  <meta charset="UTF-8">
+  <title>Myeye Smart Home</title>
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <!-- Splash Screen -->
+
     <div id="splash-screen">
         <div class="splash-content">
             <img src="IMG/MOTION.png" alt="Myeye Logo" class="splash-logo">
@@ -15,7 +14,6 @@
         </div>
     </div>
 
-    <!-- Header -->
     <header>
         <nav>
             <div class="logo">
@@ -25,7 +23,7 @@
             </div>
             <div class="menu-toggle" id="menu-toggle">&#9776;</div>
             <ul id="nav-links">
-                <li><a href="#" data-page="home">Home</a></li>
+               <li><a href="#" data-page="home">Home</a></li>
                 <li><a href="#" data-page="products">Products</a></li>
                 <li><a href="#" data-page="features">Services</a></li>
                 <li><a href="#" data-page="about">About Us</a></li>
@@ -34,46 +32,55 @@
         </nav>
     </header>
 
-    <!-- Main Content -->
     <main>
-        <!-- Hero Section -->
         <section id="home" class="page-section active">
-            <div class="hero">
-                <h1>Welcome to Myeye</h1>
-                <p>a trusted provider of networking infrastructure
-                    for local companies. When it comes to
-                    reliable and secure network design, you can leave it to us
-                    to complete your installations.</p>
-            </div>
+            
+               <section class="hero">
+            <h1>Welcome to Myeye</h1>
+            <p>a trusted provider of networking infrastructure
+              for local companies. When it comes to
+              reliable and secure network design, you can leave it to us
+              to complete your installations.</p>
         </section>
+           
+              
+             <!-- partial:index.partial.html -->
 
-        <!-- Features Section -->
+    
+    <!-- 3CX Chat Widget -->
+
+<!--Use the below code snippet to provide real time updates to the live chat plugin without the need of copying and paste each time to your website when changes are made via PBX-->
+<call-us-selector phonesystem-url="https://1517.3cx.cloud" party="myeyenetworking"></call-us-selector>
+ 
+
+<script defer src="https://downloads-global.3cx.com/downloads/livechatandtalk/v1/callus.js" id="tcx-callus-js" charset="utf-8"></script>
+   
+          <main>
+       
         <section class="features">
-            <h2>Our Features</h2>
-            <div class="feature-item">
-                <a href="https://www.aqara.com/en/product/motion-sensor-p1/" target="_blank">
-                    <img src="IMG/p1.jpeg" alt="Feature 1">
-                </a>
-                <h3>Feature 1</h3>
-                <p>Description of feature 1.</p>
-            </div>
-            <div class="feature-item">
-                <a href="https://www.aqara.com/en/product/motion-sensor-p1/" target="_blank">
-                    <img src="IMG/p1.jpeg" alt="Feature 2">
-                </a>
-                <h3>Feature 2</h3>
-                <p>Description of feature 2.</p>
-            </div>
-            <div class="feature-item">
-                <a href="https://www.aqara.com/en/product/motion-sensor-p1/" target="_blank">
-                    <img src="IMG/p1.jpeg" alt="Feature 3">
-                </a>
-                <h3>Feature 3</h3>
-                <p>Description of feature 3.</p>
-            </div>
-        </section>
-
-        <!-- Slideshow Section -->
+    <h2>Our Features</h2>
+    <div class="feature-item">
+        <a href="https://www.aqara.com/en/product/motion-sensor-p1/" target="_blank">
+            <img src="IMG/p1.jpeg" alt="Feature 1">
+        </a>
+        <h3>Feature 1</h3>
+        <p>Description of feature 1.</p>
+    </div>
+    <div class="">
+        <a href="https://www.aqara.com/en/product/motion-sensor-p1/" target="_blank">
+            <img src="" alt="">
+        </a>
+        <h3>Feature 2</h3>
+        <p></p>
+    </div>
+    <div class="feature-item">
+        <a href="https://www.aqara.com/en/product/motion-sensor-p1/" target="_blank">
+            <img src="" alt="">
+        </a>
+        <h3>Feature 3</h3>
+        <p></p>
+    </div>
+          </section>
         <section class="slideshow">
             <div class="slide">
                 <img src="IMG/mcliff.jpg" alt="Slide 1">
@@ -89,57 +96,121 @@
                 <button class="next">&#10095;</button>
             </div>
         </section>
+</section>
 
-        <!-- Products Section -->
-        <section id="products" class="page-section">
-            <h2>Our Products</h2>
-            <!-- Add your products content here -->
-        </section>
-
-        <!-- Services Section -->
-        <section id="features" class="page-section">
-            <h2>Our Services</h2>
-            <div class="image-stack">
-                <div class="image-container">
-                    <img src="IMG/install1.jpg" alt="Camera Installation">
-                    <div class="title-bar">
-                        <h2>We install cameras for homes and businesses</h2>
-                        <a href="https://wa.me/18763109445" class="cta-button">Whatsapp</a>
-                    </div>
-                </div>
-                <div class="divider"></div>
-                <div class="image-container">
-                    <img src="IMG/smart1.jpeg" alt="Smart Home Automation">
-                    <div class="title-bar">
-                        <h2>Have your home fully automated with smart home lights, switches, plugs and more, we install them all.</h2>
-                        <a href="https://call.whatsapp.com/voice/dMerVTfZhjAQQvNEyOqDTM" class="cta-button">Whatsapp</a>
-                    </div>
-                </div>
-                <div class="divider"></div>
-                <div class="image-container">
-                    <img src="IMG/smart2.jpg" alt="Smart Home Features">
-                    <div class="title-bar">
-                        <h2>Title 3</h2>
-                        <a href="https://call.whatsapp.com/voice/dMerVTfZhjAQQvNEyOqDTM" class="cta-button">Whatsapp</a>
-                    </div>
-                </div>
+        
+    </main> 
+              
+              
+              
             </div>
         </section>
 
-        <!-- About Section -->
+        <section id="products" class="page-section">
+            <h2>Our Products</h2>
+            <!-- Add your products content here -->
+
+          <!--Use the below code snippet to provide real time updates to the live chat plugin without the need of copying and paste each time to your website when changes are made via PBX-->
+<call-us-selector phonesystem-url="https://1517.3cx.cloud" party="myeyenetworking"></call-us-selector>
+ 
+
+<script defer src="https://downloads-global.3cx.com/downloads/livechatandtalk/v1/callus.js" id="tcx-callus-js" charset="utf-8"></script>
+
+
+ <main>
+       
+        <section class="features">
+    <h2>Our Features</h2>
+    <div class="feature-item">
+        <a href="https://www.aqara.com/en/product/motion-sensor-p1/" target="_blank">
+            <img src="IMG/p1.jpeg" alt="Feature 1">
+        </a>
+        <h3>Feature 1</h3>
+        <p>Description of feature 1.</p>
+    </div>
+    <div class="feature-item">
+        <a href="https://www.aqara.com/en/product/motion-sensor-p1/" target="_blank">
+            <img src="IMG/p1.jpeg" alt="Feature 2">
+        </a>
+        <h3>Feature 2</h3>
+        <p>Description of feature 2.</p>
+    </div>
+    <div class="feature-item">
+        <a href="https://www.aqara.com/en/product/motion-sensor-p1/" target="_blank">
+            <img src="IMG/p1.jpeg" alt="Feature 3">
+        </a>
+        <h3>Feature 3</h3>
+        <p>Description of feature 3.</p>
+    </div>
+</section>
+
+ </main> 
+          
+        </section>
+
+        <section id="features" class="page-section">
+            <h2>Our Services</h2>
+            <!-- Add your features content here -->
+
+          <!--Use the below code snippet to provide real time updates to the live chat plugin without the need of copying and paste each time to your website when changes are made via PBX-->
+<call-us-selector phonesystem-url="https://1517.3cx.cloud" party="myeyenetworking"></call-us-selector>
+ 
+
+<script defer src="https://downloads-global.3cx.com/downloads/livechatandtalk/v1/callus.js" id="tcx-callus-js" charset="utf-8"></script>
+
+ <main>
+
+
+        
+      
+        <section class="features">
+    <h2>OUR SERVICES</h2>
+   <section class="image-stack">
+    <div class="image-container">
+        <img src="IMG/install1.jpg" alt="Camera Installation">
+        <div class="title-bar">
+            <h2>We install cameras for homes and businesses</h2>
+            <a href="https://wa.me/18763109445" class="cta-button">Whatsapp</a>
+
+        </div>
+    </div>
+    <div class="divider"></div>
+    <div class="image-container">
+        <img src="IMG/smart1.jpeg" alt="Descriptive Alt Text 2">
+        <div class="title-bar">
+            <h2>Have your home fully automated with smart home lights, switches, plugs and more, we install them all.</h2>
+            <a href="https://call.whatsapp.com/voice/dMerVTfZhjAQQvNEyOqDTM" class="cta-button">Whatsapp</a>
+        </div>
+    </div>
+    <div class="divider"></div>
+    <div class="image-container">
+        <img src="IMG/smart2.jpg" alt="Descriptive Alt Text 3">
+        <div class="title-bar">
+            <h2>Title 3</h2>
+            <a href="https://call.whatsapp.com/voice/dMerVTfZhjAQQvNEyOqDTM" class="cta-button">Whatsapp</a>
+        </div>
+    </div>
+
+     
+</section>
+
+</section>
+    </main> 
+
+          
+        </section>
+
         <section id="about" class="page-section">
             <h2>About Us</h2>
             <!-- Add your about content here -->
         </section>
 
-        <!-- Contact Section -->
         <section id="contact" class="page-section">
             <h2>Contact Us</h2>
             <!-- Add your contact content here -->
         </section>
     </main>
 
-    <!-- Footer -->
     <footer>
         <div class="footer-content">
             <p>&copy; 2024 Myeye Smart Home. All rights reserved.</p>
@@ -154,10 +225,6 @@
             </div>
         </div>
     </footer>
-
-    <!-- Live Chat Widget -->
-    <call-us-selector phonesystem-url="https://1517.3cx.cloud" party="myeyenetworking"></call-us-selector>
-    <script defer src="https://downloads-global.3cx.com/downloads/livechatandtalk/v1/callus.js" id="tcx-callus-js" charset="utf-8"></script>
 
     <script src="./script.js"></script>
 </body>
