@@ -141,14 +141,53 @@ nav ul li a:hover {
 .slideshow {
     position: relative;
     overflow: hidden;
+    width: 100%;
+    height: 400px; /* Adjust height as needed */
 }
 
 .slide {
+    position: absolute;
+    top: 0;
+    left: 100%; /* Start off-screen to the right */
+    width: 100%;
+    height: 100%;
     display: none;
+    transition: transform 1s ease-in-out; /* Smooth sliding */
 }
 
 .slide img {
     width: 100%;
+    height: 100%;
+    object-fit: cover; /* Adjust image fit as needed */
+}
+
+.slideshow .active {
+    display: block;
+    left: 0;
+    animation: slideIn 1s forwards; /* Animate the slide in */
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%); /* Start from the right */
+    }
+    to {
+        transform: translateX(0); /* End at the correct position */
+    }
+}
+
+.slideshow .previous {
+    display: block;
+    animation: slideOut 1s forwards;
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateX(0); /* Start at the correct position */
+    }
+    to {
+        transform: translateX(-100%); /* Move out to the left */
+    }
 }
 
 .slideshow-controls {
@@ -173,6 +212,7 @@ nav ul li a:hover {
 .slideshow-controls button:hover {
     background-color: rgba(0, 0, 0, 0.8);
 }
+
 
 /* Footer Styling */
 footer {
