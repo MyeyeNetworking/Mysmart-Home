@@ -224,10 +224,9 @@ footer {
     height: 24px;
 }
 
-/* Splash Screen Styling */
 #splash-screen {
-    background-color: #333; /* Dark gray background */
-    color: #fff; /* White text color */
+    background-color: #333; /* Replace with your desired color */
+    color: #fff; /* Ensures text is visible against the background */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -246,13 +245,13 @@ footer {
 }
 
 .splash-logo {
-    width: 150px; /* Adjust size as needed */
+    width: 150px; /* Adjust as needed */
 }
 
 .splash-content h1 {
     font-size: 2em; /* Adjust font size as needed */
-    color: #fff; /* White text color for the heading */
 }
+
 
 
 
