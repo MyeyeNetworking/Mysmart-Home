@@ -45,13 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
     showSlide(currentSlide);
     setInterval(nextSlide, 3000); // Change slide every 3 seconds
 
-    // Mobile menu toggle
-    const menuToggle = document.getElementById('menu-toggle');
-    const navLinks = document.getElementById('nav-links');
-
-    menuToggle.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-    });
+  
 
     const navLinksItems = document.querySelectorAll('#nav-links a');
     const sections = document.querySelectorAll('.page-section');
