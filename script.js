@@ -82,22 +82,37 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-document.addEventListener('DOMContentLoaded', function() {
-    // Function to check if the current page is the home page
-    function isHomePage() {
-        // Modify this condition to match your home page URL or criteria
-        return window.location.pathname === '/';
-    }
+// Initialize an array to track the navigation history
+let navigationHistory = [];
 
-    // Add an event listener for the back button
-    window.onpopstate = function(event) {
-        if (!isHomePage()) {
-            // Go back to the previous page if the current page is not the home page
-            history.back();
-        } else {
-            // If it's the home page, proceed as usual
-            history.go(-1); // or you can do nothing, depending on your needs
-        }
-    };
+// Function to navigate to a specific section
+function navigateToSection(sectionId) {
+    // Push the current section to the navigation history
+    navigationHistory.push(sectionId);
+
+    // Show the target section
+    document.querySelectorAll('section').forEach(section => {
+        section.style.display = section.id === sectionId ? 'block' : 'none';
+    });
+}
+
+// Handle the back button functionality
+window.addEventListener('popstate', function(event) {
+    // Get the last section from the history
+    if (navigationHistory.length > 1) {
+        navigationHistory.pop(); // Remove the current section
+        const previousSection = navigationHistory[navigationHistory.length - 1];
+        
+        // Navigate to the previous section
+        document.querySelectorAll('section').forEach(section => {
+            section.style.display = section.id === previousSection ? 'block' : 'none';
+        });
+    } else {
+        // If there's no previous section, navigate to the home section
+        navigateToSection('home-section');
+    }
 });
+
+// Example: Navigate to a specific section
+navigateToSection('about-section');
 
