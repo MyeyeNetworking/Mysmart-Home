@@ -55,9 +55,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const navLinksItems = document.querySelectorAll('#nav-links a');
     const sections = document.querySelectorAll('.page-section');
+    let isChatOpen = false; // Track whether the live chat is open
 
     // Function to hide all sections and show the selected one
-    function showPage(pageId, addHistory = true) {
+    function showPage(pageId, addToHistory = true) {
         sections.forEach(section => {
             if (section.id === pageId) {
                 section.classList.add('active');
@@ -65,9 +66,21 @@ document.addEventListener('DOMContentLoaded', () => {
                 section.classList.remove('active');
             }
         });
+        if (addToHistory) {
+            history.pushState({ page: pageId }, '', `#${pageId}`);
+        }
+    }
 
-        if (addHistory) {
-            history.pushState({page: pageId}, '', `#${pageId}`);
+    // Function to show or hide the live chat box
+    function toggleLiveChat(show) {
+        const liveChatBox = document.getElementById('live-chat-box');
+        if (show) {
+            liveChatBox.classList.add('open');
+            isChatOpen = true;
+            history.pushState({ chatOpen: true }, '', '#live-chat'); // Update history state
+        } else {
+            liveChatBox.classList.remove('open');
+            isChatOpen = false;
         }
     }
 
@@ -80,16 +93,23 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Show the home page by default or the page based on URL hash
-    const initialPage = window.location.hash ? window.location.hash.substring(1) : 'home';
-    showPage(initialPage, false);
+    // Example event listener to open the live chat box
+    document.getElementById('live-chat-link').addEventListener('click', (e) => {
+        e.preventDefault();
+        toggleLiveChat(true);
+    });
 
     // Handle browser back/forward button navigation
     window.addEventListener('popstate', (e) => {
-        if (e.state && e.state.page) {
+        if (isChatOpen) {
+            toggleLiveChat(false); // Close the chat box if it's open
+        } else if (e.state && e.state.page) {
             showPage(e.state.page, false);
         } else {
             showPage('home', false);
         }
     });
+
+    // Show the home page by default
+    showPage('home');
 });
