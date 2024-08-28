@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
             slide.style.display = i === index ? 'block' : 'none';
         });
     }
-
+    
     function nextSlide() {
         currentSlide = (currentSlide + 1) % slides.length;
         showSlide(currentSlide);
@@ -55,33 +55,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const navLinksItems = document.querySelectorAll('#nav-links a');
     const sections = document.querySelectorAll('.page-section');
-    let isChatOpen = false; // Track whether the live chat is open
+    let previousSection = null;
 
     // Function to hide all sections and show the selected one
-    function showPage(pageId, addToHistory = true) {
+    function showPage(pageId) {
         sections.forEach(section => {
             if (section.id === pageId) {
                 section.classList.add('active');
+                previousSection = section; // Track the last active section
             } else {
                 section.classList.remove('active');
             }
         });
-        if (addToHistory) {
-            history.pushState({ page: pageId }, '', `#${pageId}`);
-        }
-    }
-
-    // Function to show or hide the live chat box
-    function toggleLiveChat(show) {
-        const liveChatBox = document.getElementById('live-chat-box');
-        if (show) {
-            liveChatBox.classList.add('open');
-            isChatOpen = true;
-            history.pushState({ chatOpen: true }, '', '#live-chat'); // Update history state
-        } else {
-            liveChatBox.classList.remove('open');
-            isChatOpen = false;
-        }
     }
 
     // Event listeners for navigation links
@@ -90,26 +75,30 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             const pageId = link.getAttribute('data-page');
             showPage(pageId);
+            history.pushState({pageId: pageId}, "", `#${pageId}`); // Update history state
         });
     });
 
-    // Example event listener to open the live chat box
-    document.getElementById('live-chat-link').addEventListener('click', (e) => {
-        e.preventDefault();
-        toggleLiveChat(true);
-    });
-
-    // Handle browser back/forward button navigation
+    // Handle the back button to navigate to the previous section
     window.addEventListener('popstate', (e) => {
-        if (isChatOpen) {
-            toggleLiveChat(false); // Close the chat box if it's open
-        } else if (e.state && e.state.page) {
-            showPage(e.state.page, false);
-        } else {
-            showPage('home', false);
+        const pageId = e.state ? e.state.pageId : 'home';
+        showPage(pageId);
+
+        // Close the live chat box if it's open
+        const liveChatBox = document.getElementById('live-chat-box');
+        if (liveChatBox && liveChatBox.classList.contains('open')) {
+            liveChatBox.classList.remove('open');
         }
     });
 
     // Show the home page by default
     showPage('home');
+
+    // Display maintenance image for missing images
+    const images = document.querySelectorAll('img');
+    images.forEach(img => {
+        img.addEventListener('error', () => {
+            img.src = 'IMG/error.jpg'; // Replace with the actual path to your maintenance image
+        });
+    });
 });
