@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
             slide.style.display = i === index ? 'block' : 'none';
         });
     }
-    
+
     function nextSlide() {
         currentSlide = (currentSlide + 1) % slides.length;
         showSlide(currentSlide);
@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const sections = document.querySelectorAll('.page-section');
 
     // Function to hide all sections and show the selected one
-    function showPage(pageId) {
+    function showPage(pageId, addHistory = true) {
         sections.forEach(section => {
             if (section.id === pageId) {
                 section.classList.add('active');
@@ -65,6 +65,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 section.classList.remove('active');
             }
         });
+
+        if (addHistory) {
+            history.pushState({page: pageId}, '', `#${pageId}`);
+        }
     }
 
     // Event listeners for navigation links
@@ -76,43 +80,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Show the home page by default
-    showPage('home');
-});
+    // Show the home page by default or the page based on URL hash
+    const initialPage = window.location.hash ? window.location.hash.substring(1) : 'home';
+    showPage(initialPage, false);
 
-
-
-// Initialize an array to track the navigation history
-let navigationHistory = [];
-
-// Function to navigate to a specific section
-function navigateToSection(sectionId) {
-    // Push the current section to the navigation history
-    navigationHistory.push(sectionId);
-
-    // Show the target section
-    document.querySelectorAll('section').forEach(section => {
-        section.style.display = section.id === sectionId ? 'block' : 'none';
+    // Handle browser back/forward button navigation
+    window.addEventListener('popstate', (e) => {
+        if (e.state && e.state.page) {
+            showPage(e.state.page, false);
+        } else {
+            showPage('home', false);
+        }
     });
-}
-
-// Handle the back button functionality
-window.addEventListener('popstate', function(event) {
-    // Get the last section from the history
-    if (navigationHistory.length > 1) {
-        navigationHistory.pop(); // Remove the current section
-        const previousSection = navigationHistory[navigationHistory.length - 1];
-        
-        // Navigate to the previous section
-        document.querySelectorAll('section').forEach(section => {
-            section.style.display = section.id === previousSection ? 'block' : 'none';
-        });
-    } else {
-        // If there's no previous section, navigate to the home section
-        navigateToSection('home-section');
-    }
 });
-
-// Example: Navigate to a specific section
-navigateToSection('about-section');
-
