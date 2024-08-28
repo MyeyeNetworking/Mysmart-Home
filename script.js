@@ -79,3 +79,25 @@ document.addEventListener('DOMContentLoaded', () => {
     // Show the home page by default
     showPage('home');
 });
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Function to check if the current page is the home page
+    function isHomePage() {
+        // Modify this condition to match your home page URL or criteria
+        return window.location.pathname === '/';
+    }
+
+    // Add an event listener for the back button
+    window.onpopstate = function(event) {
+        if (!isHomePage()) {
+            // Go back to the previous page if the current page is not the home page
+            history.back();
+        } else {
+            // If it's the home page, proceed as usual
+            history.go(-1); // or you can do nothing, depending on your needs
+        }
+    };
+});
+
