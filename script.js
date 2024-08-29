@@ -102,3 +102,25 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+
+    // Event listeners for navigation links
+    const navLinks = document.querySelectorAll('#nav-links a');
+    const sections = document.querySelectorAll('.page-section');
+    const navLinksContainer = document.getElementById('nav-links');
+
+    function showPage(pageId) {
+        sections.forEach(section => {
+            section.classList.toggle('active', section.id === pageId);
+        });
+        // Hide the dropdown menu after clicking a link
+        navLinksContainer.classList.remove('active');
+    }
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const pageId = link.getAttribute('data-page');
+            showPage(pageId);
+        });
+    });
