@@ -160,9 +160,6 @@ img {
     display: none;
 }
 
-.slide img {
-    width: 100%;
-}
 
 .gradient-overlay {
     position: absolute;
