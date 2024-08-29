@@ -156,9 +156,11 @@ img {
     display: block;
 }
 
-.slide {
-    display: none;
+
+.slide img {
+    width: 100%;
 }
+
 
 
 .gradient-overlay {
