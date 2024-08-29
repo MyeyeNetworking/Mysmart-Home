@@ -7,8 +7,12 @@ document.addEventListener('DOMContentLoaded', () => {
         slides.forEach((slide, i) => {
             slide.style.display = i === index ? 'block' : 'none';
         });
+
+        // Add gradient overlay and description
+        slides[index].querySelector('.image-overlay').style.display = 'block';
+        slides[index].querySelector('.description').style.display = 'block';
     }
-    
+
     function nextSlide() {
         currentSlide = (currentSlide + 1) % slides.length;
         showSlide(currentSlide);
@@ -55,14 +59,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const navLinksItems = document.querySelectorAll('#nav-links a');
     const sections = document.querySelectorAll('.page-section');
-    let previousSection = null;
 
     // Function to hide all sections and show the selected one
     function showPage(pageId) {
         sections.forEach(section => {
             if (section.id === pageId) {
                 section.classList.add('active');
-                previousSection = section; // Track the last active section
             } else {
                 section.classList.remove('active');
             }
@@ -75,30 +77,30 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             const pageId = link.getAttribute('data-page');
             showPage(pageId);
-            history.pushState({pageId: pageId}, "", `#${pageId}`); // Update history state
         });
-    });
-
-    // Handle the back button to navigate to the previous section
-    window.addEventListener('popstate', (e) => {
-        const pageId = e.state ? e.state.pageId : 'home';
-        showPage(pageId);
-
-        // Close the live chat box if it's open
-        const liveChatBox = document.getElementById('live-chat-box');
-        if (liveChatBox && liveChatBox.classList.contains('open')) {
-            liveChatBox.classList.remove('open');
-        }
     });
 
     // Show the home page by default
     showPage('home');
 
-    // Display maintenance image for missing images
-    const images = document.querySelectorAll('img');
-    images.forEach(img => {
-        img.addEventListener('error', () => {
-            img.src = 'IMG/error.jpg'; // Replace with the actual path to your maintenance image
-        });
+    // Live chat handling
+    const liveChatBox = document.querySelector('.live-chat-box');
+    const backButtonHandler = () => {
+        if (liveChatBox.classList.contains('open')) {
+            liveChatBox.classList.remove('open');
+            window.history.pushState(null, null, window.location.pathname); // Modify history so that back button does not close chat again
+        }
+    };
+    window.addEventListener('popstate', backButtonHandler);
+
+    // Fallback for images without src (Maintenance Image)
+    const maintenanceImageSrc = 'path_to_maintenance_image.jpg';
+    slides.forEach(slide => {
+        const img = slide.querySelector('img');
+        if (!img.getAttribute('src')) {
+            img.setAttribute('src', maintenanceImageSrc);
+        }
     });
 });
+
+// HTML Example for the overlay and description:
