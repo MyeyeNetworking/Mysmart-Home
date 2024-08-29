@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const images = document.querySelectorAll('img');
     images.forEach(img => {
         img.addEventListener('error', () => {
-            img.src = 'IMG/error.jpg'; // Replace with the actual path to your maintenance image
+            img.src = 'path/to/maintenance-image.jpg'; // Replace with the actual path to your maintenance image
         });
     });
 });
