@@ -192,7 +192,7 @@ nav ul li a:hover {
     padding: 10px;
     cursor: pointer;
     font-size: 1.5em;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.5s ease;
 }
 
 .slideshow-controls button:hover {
