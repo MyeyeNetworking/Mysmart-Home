@@ -55,14 +55,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const navLinksItems = document.querySelectorAll('#nav-links a');
     const sections = document.querySelectorAll('.page-section');
-    let previousSection = null;
 
     // Function to hide all sections and show the selected one
     function showPage(pageId) {
         sections.forEach(section => {
             if (section.id === pageId) {
                 section.classList.add('active');
-                previousSection = section; // Track the last active section
             } else {
                 section.classList.remove('active');
             }
@@ -75,30 +73,35 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             const pageId = link.getAttribute('data-page');
             showPage(pageId);
-            history.pushState({pageId: pageId}, "", `#${pageId}`); // Update history state
         });
-    });
-
-    // Handle the back button to navigate to the previous section
-    window.addEventListener('popstate', (e) => {
-        const pageId = e.state ? e.state.pageId : 'home';
-        showPage(pageId);
-
-        // Close the live chat box if it's open
-        const liveChatBox = document.getElementById('live-chat-box');
-        if (liveChatBox && liveChatBox.classList.contains('open')) {
-            liveChatBox.classList.remove('open');
-        }
     });
 
     // Show the home page by default
     showPage('home');
 
-    // Display maintenance image for missing images
+    // Maintenance image for missing images
     const images = document.querySelectorAll('img');
-    images.forEach(img => {
-        img.addEventListener('error', () => {
-            img.src = 'IMG/error.jpg'; // Replace with the actual path to your maintenance image
-        });
+    images.forEach(image => {
+        image.onerror = () => {
+            image.src = 'path/to/maintenance-image.jpg';
+        };
+    });
+
+    // Add black gradient overlay with description to each image in the slideshow
+    slides.forEach(slide => {
+        const img = slide.querySelector('img');
+        const description = slide.querySelector('.description');
+        
+        if (img) {
+            const gradientOverlay = document.createElement('div');
+            gradientOverlay.classList.add('gradient-overlay');
+            
+            const descriptionText = document.createElement('div');
+            descriptionText.classList.add('description-text');
+            descriptionText.textContent = description ? description.textContent : 'Image description here';
+
+            gradientOverlay.appendChild(descriptionText);
+            slide.appendChild(gradientOverlay);
+        }
     });
 });
