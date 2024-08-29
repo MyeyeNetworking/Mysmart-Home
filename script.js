@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
     showSlide(currentSlide);
     setInterval(nextSlide, 3000); // Change slide every 3 seconds
 
-   // Mobile menu toggle
+    // Mobile menu toggle
     const menuToggle = document.getElementById('menu-toggle');
     const navLinks = document.getElementById('nav-links');
 
@@ -55,28 +55,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const navLinksItems = document.querySelectorAll('#nav-links a');
     const sections = document.querySelectorAll('.page-section');
+    let previousSection = null;
 
     // Function to hide all sections and show the selected one
     function showPage(pageId) {
         sections.forEach(section => {
             if (section.id === pageId) {
                 section.classList.add('active');
+                previousSection = section; // Track the last active section
             } else {
                 section.classList.remove('active');
             }
         });
     }
-
-    // Event listeners for navigation links
-    navLinksItems.forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            const pageId = link.getAttribute('data-page');
-            showPage(pageId);
-        });
-    });
-
- 
 
     // Event listeners for navigation links
     navLinksItems.forEach(link => {
