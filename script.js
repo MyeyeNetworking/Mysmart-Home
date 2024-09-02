@@ -125,9 +125,3 @@ document.addEventListener('DOMContentLoaded', () => {
             showPage(pageId);
         });
     });
-
-
-
-
-
-
