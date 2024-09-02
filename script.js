@@ -125,3 +125,22 @@ document.addEventListener('DOMContentLoaded', () => {
             showPage(pageId);
         });
     });
+
+
+
+document.querySelectorAll('a[data-page]').forEach(link => {
+    link.addEventListener('click', function(event) {
+        event.preventDefault();
+        const page = this.getAttribute('data-page');
+        document.querySelectorAll('.page-section').forEach(section => {
+            section.classList.remove('active');
+        });
+        document.getElementById(page).classList.add('active');
+        // Close the dropdown if open
+        const navLinks = document.getElementById('nav-links');
+        if (navLinks.classList.contains('active')) {
+            navLinks.classList.remove('active');
+        }
+    });
+});
+
