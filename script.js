@@ -144,16 +144,5 @@ document.querySelectorAll('a[data-page]').forEach(link => {
 });
 
 
-document.querySelectorAll('.back-button').forEach(button => {
-    button.addEventListener('click', () => {
-        // Hide all page sections
-        document.querySelectorAll('.page-section').forEach(section => {
-            section.classList.remove('active');
-        });
-
-        // Show the services page section
-        document.getElementById('features').classList.add('active');
-    });
-});
 
 
