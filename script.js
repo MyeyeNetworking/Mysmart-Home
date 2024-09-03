@@ -145,4 +145,20 @@ document.querySelectorAll('a[data-page]').forEach(link => {
 
 
 
+document.addEventListener('DOMContentLoaded', function() {
+    const serviceSections = ['service1', 'service2', 'service3'];
+
+    window.onpopstate = function(event) {
+        const currentPage = document.querySelector('.page-section.active').id;
+
+        if (serviceSections.includes(currentPage)) {
+            // Show the services section
+            document.querySelector('.page-section.active').classList.remove('active');
+            document.getElementById('services').classList.add('active');
+
+            // Prevent default back action
+            history.pushState(null, null, window.location.href);
+        }
+    };
+});
 
