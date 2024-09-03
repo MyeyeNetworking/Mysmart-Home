@@ -145,7 +145,7 @@ document.querySelectorAll('a[data-page]').forEach(link => {
 
 
 
-document.addEventListener('DOMContentLoaded', function() {
+ {
     const serviceSections = ['service1', 'service2', 'service3'];
 
     window.onpopstate = function(event) {
