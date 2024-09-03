@@ -662,3 +662,32 @@ nav ul li a:hover {
     }
 }
 
+
+/* Features Section Styling */
+.Description of feature 1 {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.Description of feature 1 h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.Description of feature 1-item {
+    margin-bottom: 20px;
+}
+
+.Description of feature 1-item img {
+    width: 100%;
+    height: auto;
+}
+
+.Description of feature 1-item h3 {
+    font-size: 1.5em;
+}
+
+.Description of feature 1-item p {
+    font-size: 1em;
+    color: #666;
+}
