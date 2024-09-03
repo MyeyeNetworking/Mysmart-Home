@@ -145,24 +145,14 @@ document.querySelectorAll('a[data-page]').forEach(link => {
 
 
 
-document.addEventListener('DOMContentLoaded', function() {
-    const serviceSections = ['#service-description1', '#service-description2', '#service-description3'];
-
-    window.addEventListener('hashchange', function() {
-        const currentHash = window.location.hash;
-
-        if (serviceSections.includes(currentHash)) {
-            // Redirect to the services section
-            window.location.hash = '#services';
-        }
-    });
-
-    // Ensure navigation to service sections adds a hash
-    document.querySelectorAll('.service-link').forEach(link => {
-        link.addEventListener('click', function(event) {
-            event.preventDefault();
-            const targetSection = event.currentTarget.getAttribute('href');
-            window.location.hash = targetSection;
+document.querySelectorAll('.back-button').forEach(button => {
+    button.addEventListener('click', () => {
+        // Hide all page sections
+        document.querySelectorAll('.page-section').forEach(section => {
+            section.classList.remove('active');
         });
+
+        // Show the services page section
+        document.getElementById('features').classList.add('active');
     });
 });
